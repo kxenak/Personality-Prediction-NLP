@@ -1,0 +1,5 @@
+processed_data/**
+data/**
+output_focal/test_metrics/**
+output_focal/train_metrics/**
+output_focal/weights/**
