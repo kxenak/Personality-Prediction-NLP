@@ -27,7 +27,7 @@ def save_splits(data, directory, n_splits=5):
     kf = KFold(n_splits=n_splits, shuffle=True, random_state=42)
 
     # Creating distinct folds
-    fold_number = 1
+    fold_number = 0
     for train_index, val_index in kf.split(train_df):
         fold_df = train_df.iloc[val_index]
         fold_df.to_csv(os.path.join(directory, f'fold_{fold_number}.csv'), index=False)
@@ -52,7 +52,7 @@ def main():
     data = load_data(data_file)
     
     # Directory to save the split files
-    splits_dir = 'folds'
+    splits_dir = 'data/folds'
     
     # Generate and save the data splits
     save_splits(data, splits_dir)
